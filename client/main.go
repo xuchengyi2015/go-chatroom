@@ -8,7 +8,11 @@ import (
 	"strings"
 )
 
-const address string = "127.0.0.1:8080"
+const (
+	log_file_dic = "./log.txt"
+	tcp          = "tcp"
+	ip           = "127.0.0.1:8080"
+)
 
 func checkError(err error) {
 	if err != nil {
@@ -18,7 +22,7 @@ func checkError(err error) {
 }
 
 func main() {
-	conn, err := net.Dial("tcp", address)
+	conn, err := net.Dial(tcp, ip)
 	checkError(err)
 	defer conn.Close()
 
@@ -28,7 +32,8 @@ func main() {
 	for {
 		numOfBytes, err := conn.Read(buf)
 		if err != nil {
-			continue
+			fmt.Println("You is already exited.")
+			os.Exit(0)
 		}
 
 		if numOfBytes > 0 {
@@ -48,7 +53,7 @@ func sendMessage(conn net.Conn) {
 		input = string(data)
 
 		if strings.ToUpper(input) == "EXIT" {
-			fmt.Printf("client:%s is exited.\n", address)
+			fmt.Print("client is exited.\n")
 			conn.Close()
 			break
 		}

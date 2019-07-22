@@ -1,0 +1,9 @@
+2019/07/21 23:56:17 rinimao
+
+2019/07/21 23:56:50 /home/xcy/LearnGoProject/src/github.com/go-chatroom/server/main.go:97: nihao
+
+2019/07/21 23:56:50 /home/xcy/LearnGoProject/src/github.com/go-chatroom/server/main.go:98: wocao
+
+2019/07/21 23:56:58 /home/xcy/LearnGoProject/src/github.com/go-chatroom/server/main.go:97: nihao
+
+2019/07/21 23:56:58 /home/xcy/LearnGoProject/src/github.com/go-chatroom/server/main.go:98: wocao
